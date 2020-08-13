@@ -3,7 +3,7 @@ layout: page
 permalink: /publications/
 title: publications
 description: Hardware enhanced Security
-years: [2019, 2018, 2017, 2016, 2014, 2013]
+years: [2019, 2018, 2017, 2016]
 nav: true
 ---
 
