@@ -1,3 +1,10 @@
+---
+layout: post
+title: a post with math
+date: 2019-07-02 11:12:00-0400
+description: SGX enclave debugging 1
+---
+
 # SGX enclave内部的输出与调试（一）
 
 最近在Ascii0x03的帮助下，做了一个能在enclave内部第三方库中对信息进行输出的小demo。
