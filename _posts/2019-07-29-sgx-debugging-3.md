@@ -2,7 +2,7 @@
 
 这次要介绍一个在项目过程中我所用到的调试sao操作。借此机会打个广告：
 
-https://github.com/StanPlatinum/elf-respect，欢迎感兴趣的人star、fork、给我们发issue。
+https://github.com/StanPlatinum/cat-sgx，欢迎感兴趣的人star、fork、给我们发issue。
 
 在上面提到的项目里，我们做了一件这样的事情：我们把一个C/C++程序略微改造，经由我们自制的编译器编译之后，生成了一个relocatable Elf文件，也就是俗称.o文件。然后我们把这个relocatable Elf文件放到SGX enclave里执行。至于为什么要这么做，搞这么麻烦，这个可以去看我之后的paper或者blog，在此不表。
 

@@ -7,7 +7,7 @@ description: SGX enclave debugging 1
 
 # SGX enclave内部的输出与调试（一）
 
-最近在Ascii0x03的帮助下，做了一个能在enclave内部第三方库中对信息进行输出的小demo。
+最近在[Ascii0x03](https://github.com/a3135134)的帮助下，做了一个能在enclave内部第三方库中对信息进行输出的小demo。
 
 “在第三方库中对enclave内部信息进行输出”，这句话听起来挺绕的，有人会问为什么要做这么复杂的事情呢，我的回答是：确实是事出有因。在最开始的时候，我只是想把一个第三方库(capstone)的某些功能放到sgx里。然而在实现的过程中，我发现这个看似简单的工作其实并没有那么容易，总会需要输出一些东西，借此来查看是哪里出了问题。具体遇到的坑在本文中就不详述，这里就讲讲我在实现时是怎么进行调试的。
 
@@ -15,12 +15,6 @@ description: SGX enclave debugging 1
 
 既然不能使用系统调用，那就意味着没法使用printf这样简单方便的函数。所以首先得在enclave内部实现一个自己的printf trampoline——为了在需要的地方打印。这个printf trampoline要在执行时调用Ocall，Ocall再去调用系统自带的printf函数。这样的例子在网上有很多，一般的SGX入门教程也会讲，在此不赘述。
 
-接着，为了使得这个printf trampoline可以被enclave之外的第三方库调用，就得把这个printf trampoline暴露出来，形成一个Ecall。这个也简单，在edl文件中定义一下就行。这一步和上一步合起来就建立好了我们的输出功能，具体代码可以参考如下示例。
-
-定义Ecall：https://github.com/StanPlatinum/dyninst_in_enclave/blob/master/capstone-checker/checker_in_enclave/Enclave/Enclave.edl#L50
-
-定义Ocall：https://github.com/StanPlatinum/dyninst_in_enclave/blob/master/capstone-checker/checker_in_enclave/Enclave/Enclave.edl#L67
-
-定义printf trampoline：https://github.com/StanPlatinum/dyninst_in_enclave/blob/master/capstone-checker/checker_in_enclave/Enclave/Enclave.cpp#L21
+接着，为了使得这个printf trampoline可以被enclave之外的第三方库调用，就得把这个printf trampoline暴露出来，形成一个Ecall。这个也简单，在edl文件中定义一下就行。这一步和上一步合起来就建立好了我们的输出功能。
 
 做好上述这些，就意味着在用户层可以调用输出函数了。但是，往往在我们开发的过程中，很多时候我们需要去调试引入到enclave里的第三方库。这些个第三方库是我们Enclave.cpp需要去静态链接的(enclave里不支持动态链接)，第三方库想要再回头去调用我们在Enclave.cpp里定义的输出函数是不行的。这时就需要利用回调函数来实现调试功能了。使用回调函数的部分在下一篇文章里讲，有兴趣的小伙伴可以移步至下一篇。
