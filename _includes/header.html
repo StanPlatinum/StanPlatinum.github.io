@@ -34,7 +34,7 @@
           <li class="nav-item {% if page.title == 'about' %}active{% endif %}">
             <a class="nav-link" href="{{ '/' | relative_url }}">
               about
-              {% if page.title == "about" %}
+              {% if page.title == p.title %}
                 <span class="sr-only">(current)</span>
               {% endif %}
             </a>
@@ -44,7 +44,7 @@
           <li class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
             <a class="nav-link" href="{{ '/blog/' | relative_url }}">
               blog
-              {% if page.title == "blog" %}
+              {% if page.title == p.title %}
               <span class="sr-only">(current)</span>
               {% endif %}
             </a>
