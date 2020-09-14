@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="post">
-  {% assign name = "Weijie Liu" | split: ' ' %}
+  {% assign name = "Dr. Stan" | split: ' ' %}
   {% assign firstname = name | first %}
   {% if name.size > 2 %}
      {% assign middlenames =  name | slice:1, name.size-1 | join:" " %}
@@ -12,8 +12,8 @@ layout: default
   {% endif %}
   {% assign lastname = name | last %}
   <header class="post-header">
-
-    <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl | prepend: site.url }}/">
+    <!-- <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl | prepend: site.url }}/"> -->
+    <a class="navbar-brand title font-weight-lighter">
      <span class="font-weight-bold">{{ firstname }}</span> {{ middlenames }}  {{ lastname }}
     </a>
   </header>
