@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About Me
 permalink: /
 description: <a href="#">Affiliations</a>. Address. Contacts. Moto. Etc.
 
@@ -8,8 +8,7 @@ profile:
   align: right
   image: sao.png
   address: >
-    <p>Luddy Hall</p>
-    <p>Bloomington, IN</p>
+    Luddy Hall, Bloomington, IN, USA
 
 news: true
 social: true
