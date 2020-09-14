@@ -37,7 +37,7 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 # -----------------------------------------------------------------------------
 
 github_username: StanPlatinum
-scholar_userid: gGQftcIAAAAJ&hl=en
+scholar_userid: gGQftcIAAAAJ&hl
 orcid_id: 0000-0002-3054-766X
 medium_username: # your Medium username
 quora_username: # your Quora username
@@ -46,8 +46,8 @@ research_gate_profile: Weijie_Liu6
 blogger_url: #
 
 contact_note: >
-    You are welcome to send me email to me, but do not be discouraged if I do not respond;
-    I might just be putting off by current tight schedule.
+  You are welcome to send me email to me, but do not be discouraged if I do not respond;
+  I might just be putting off by a tight schedule.
 # -----------------------------------------------------------------------------
 # Blog
 # -----------------------------------------------------------------------------
