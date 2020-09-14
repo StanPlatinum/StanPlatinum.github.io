@@ -44,10 +44,8 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 # -----------------------------------------------------------------------------
 
 github_username: StanPlatinum
-scholar_userid: # your Google Scholar ID
-semanticscholar_id: # your Semantic Scholar ID
-whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
-orcid_id: # your ORCID ID
+scholar_userid: gGQftcIAAAAJ&hl=en
+orcid_id: 0000-0002-3054-766X
 medium_username: # your Medium username
 quora_username: # your Quora username
 publons_id: # your ID on Publons
@@ -55,8 +53,8 @@ research_gate_profile: Weijie_Liu6
 blogger_url: #
 
 contact_note: >
-  My permanent email – liuweijie at whu period edu period cn
-
+    You are welcome to send me email to me, but do not be discouraged if I do not respond;
+    I might just be putting off by current tight schedule.
 # -----------------------------------------------------------------------------
 # Blog
 # -----------------------------------------------------------------------------
