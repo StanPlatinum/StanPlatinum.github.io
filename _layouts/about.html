@@ -2,14 +2,21 @@
 layout: default
 ---
 
-<!-- about.html -->
-      <div class="post">
-        <header class="post-header">
-          <h1 class="post-title">
-            {% if site.title == "blank" -%}<span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}{%- else -%}{{ site.title }}{%- endif %}
-          </h1>
-          <p class="desc">{{ page.subtitle }}</p>
-        </header>
+<div class="post">
+
+  <header class="post-header">
+    {% assign name = "dajijijiji" | split: ' ' %}
+    {% assign firstname = name | first %}
+    {% if name.size > 2 %}
+       {% assign middlenames =  name | slice:1, name.size-1 | join:" " %}
+    {% else %}
+       {% assign middlenames = '' %}
+    {% endif %}
+    {% assign lastname = name | last %}
+    <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl | prepend: site.url }}/">
+     <span class="font-weight-bold">{{ firstname }}</span> {{ middlenames }}  {{ lastname }}
+    </a>
+  </header>
 
         <article>
           {% if page.profile -%}
