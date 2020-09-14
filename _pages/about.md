@@ -7,8 +7,8 @@ subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
 profile:
   align: right
   image: sao.png
-  address: >
-    Luddy Hall, Bloomington, IN, USA
+  # address: >
+  #   Luddy Hall, Bloomington, IN
 
 news: true  # includes a list of news items
 latest_posts: true  # includes a list of the newest posts
