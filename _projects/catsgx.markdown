@@ -1,9 +1,8 @@
 ---
 layout: page
-title: S(gx)Elf-respect
-description: Confidential Attestation
-# img: /assets/img/7.jpg
-img:
+title: CAT-SGX
+description: S(gx)Elf-respect/Confidential Attestation
+img: # /assets/img/7.jpg
 # redirect: https://github.com/StanPlatinum/elf-respect
 importance: 1
 ---
