@@ -2,10 +2,36 @@
 layout: page
 title: S(gx)Elf-respect
 description: Confidential Attestation
+# img: /assets/img/7.jpg
 img:
-redirect: https://github.com/StanPlatinum/elf-respect
+# redirect: https://github.com/StanPlatinum/elf-respect
 importance: 4
 ---
+
+<!-- Every project has a beautiful feature showcase page.
+It's easy to include images in a flexible 3-column grid format.
+Make your photos 1/3, 2/3, or full width.
+
+To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+
+    ---
+    layout: page
+    title: project
+    description: a project with a background image
+    img: /assets/img/12.jpg
+    ---
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/1.jpg' | relative_url }}" alt="" title="example image"/>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/3.jpg' | relative_url }}" alt="" title="example image"/>
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/5.jpg' | relative_url }}" alt="" title="example image"/>
+    </div>
+</div> -->
 
 # S(gx)ELF-respect: Privacy-preserving TEE prototype on a Service-Oriented Environment
 
