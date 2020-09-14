@@ -116,8 +116,8 @@ plugins:
 
 scholar:
 
-  last_name: Liu
-  first_name: Weijie
+  last_name: # Liu
+  # first_name: Weijie
 
   style: apa
   locale: en
