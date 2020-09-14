@@ -1,4 +1,9 @@
-# SGX enclave内部的输出与调试（二）
+---
+layout: post
+title: SGX enclave内部的输出与调试 2
+date: 2019-07-04 11:12:00-0400
+description: SGX enclave debugging 2
+---
 
 接上文所说，在我们开发的过程中，很多时候我们需要去调试引入到enclave里的第三方库，也就是需要去调用在Enclave.cpp里定义的printf trampoline。因为在编译的时候我们自己写的Enclave.cpp是需要去链接这些库的，所以这些个第三方库想要再回头去调用我们在Enclave.cpp里定义的函数是不行的。
 

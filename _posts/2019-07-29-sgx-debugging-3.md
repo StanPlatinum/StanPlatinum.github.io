@@ -1,4 +1,9 @@
-# SGX enclave内部的输出与调试（三）
+---
+layout: post
+title: SGX enclave内部的输出与调试 3
+date: 2019-07-29 11:12:00-0400
+description: SGX enclave debugging 3
+---
 
 这次要介绍一个在项目过程中我所用到的调试sao操作。借此机会打个广告：
 

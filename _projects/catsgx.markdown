@@ -5,7 +5,7 @@ description: Confidential Attestation
 # img: /assets/img/7.jpg
 img:
 # redirect: https://github.com/StanPlatinum/elf-respect
-importance: 4
+importance: 1
 ---
 
 <!-- Every project has a beautiful feature showcase page.
@@ -33,7 +33,9 @@ To give your project a background in the portfolio page, just add the img tag to
     </div>
 </div> -->
 
-# S(gx)ELF-respect: Privacy-preserving TEE prototype on a Service-Oriented Environment
+## CAT-SGX: Privacy-preserving TEE prototype on a Service-Oriented Environment
+
+## [Link](https://github.com/StanPlatinum/elf-respect)
 
 ***
 
