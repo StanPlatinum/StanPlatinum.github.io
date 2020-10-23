@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Paper accepted!
-date: 2020-10-23 20:28:00-0400
+date: 2020-10-22 20:28:00-0400
 inline: false
 ---
 
