@@ -9,7 +9,7 @@ img: # /assets/img/7.jpg
 
 ## HYBRID: Retrofitting LBR Profiling to Support Virtual Machine Introspection
 
-## [Link1](https://github.com/StanPlatinum/ROP_detection_out-of-the-box)
+## [Link](https://github.com/StanPlatinum/ROP_detection_out-of-the-box)
 
 
 ***
