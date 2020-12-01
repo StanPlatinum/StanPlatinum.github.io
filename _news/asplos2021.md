@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Paper accepted!
+title: First ASPLOS Paper accepted!
 date: 2020-11-30 20:28:00-0400
 inline: false
 ---
