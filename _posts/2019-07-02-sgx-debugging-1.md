@@ -2,7 +2,7 @@
 layout: post
 title: SGX enclave内部的输出与调试 1
 date: 2019-07-02 11:12:00-0400
-description: SGX enclave debugging 1
+description: SGX in-enclave debugging 1
 ---
 
 最近在[Ascii0x03](https://github.com/a3135134)的帮助下，做了一个能在enclave内部第三方库中对信息进行输出的小demo。
