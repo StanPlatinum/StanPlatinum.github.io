@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Graphene-SGX attestation 1
+title: Graphene-SGX attestation 2
 date: 2021-01-28 11:12:00-0400
 description: Graphene-SGX attestation - adding an Ecall
 ---
@@ -19,7 +19,7 @@ if (__atomic_compare_exchange_n(&g_enclave_start_called.counter, &t, 1, /*weak=*
 ```
 这就比较恶心了，因为想要加一个Ecall，不仅没有像加Ocall那么方便，同时还要照顾到这个ecall_enclave_start的感受，不得不说这个地方Graphene还没有做得很好。
 
-现在想要加Ecall，就得好好研究```void handle_ecall(long ecall_index, void* ecall_args, void* exit_target, void* enclave_base_addr)```这个ecall的handler了。我和[ya0guang]()在这个handler里加入了一些debug info，用的Graphene最新的log API：```log_error()```。
+现在想要加Ecall，就得好好研究```void handle_ecall(long ecall_index, void* ecall_args, void* exit_target, void* enclave_base_addr)```这个ecall的handler了。我和[ya0guang](https://ya0guang.com/)在这个handler里加入了一些debug info，用的Graphene最新的log API：```log_error()```。
 
 我们尝试了在各种地方加入debug info，来试图找到一个合适的添加我们自己ecall的地方。下面是我们的测试代码片段：
 ```c
