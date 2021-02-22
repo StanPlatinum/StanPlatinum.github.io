@@ -11,19 +11,9 @@ description: SGX in-enclave debugging - callback function
 
 这时，就需要引入回调函数来解决这个问题了。回调函数是什么，在这里可以得到一个比较清晰的解答（当然各位也可以搜一搜相关资料，很多地方都有讲）。想要使用回调函数，需要对三个部分分别做改动。
 
-首先是需要加入调试的第三方库里，要传入一个打印函数的函数指针。为了不影响原来的函数，我们可以新增一个函数实现。比如在我的项目中，需要调试capstone里的cs.c里的cs_disasm这个函数，可以重新定义一个带函数指针参数的cs_disasm_dbg函数，像这么写：
-
-https://github.com/StanPlatinum/capstone/blob/master/cs.c#L1049
-
-当然，需要在头文件里加入函数声明：
-
-https://github.com/StanPlatinum/capstone/blob/master/cs_priv.h#L20
-
-第二就是加入调试语句了，比如：
-
-https://github.com/StanPlatinum/capstone/blob/master/cs.c#L1127
-
-这两部做完就可以重新编译第三方库。然后就是进行第三部，在Enclave.cpp里调用这个新的cs_disasm_dbg 。
+首先是需要加入调试的第三方库里，要传入一个打印函数的函数指针。为了不影响原来的函数，我们可以新增一个函数实现。比如在我的项目中，需要调试capstone里的cs.c里的cs_disasm这个函数，可以重新定义一个带函数指针参数的cs_disasm_dbg函数。当然，需要在头文件里加入函数声明；
+第二就是加入调试语句了；
+这两部做完就可以重新编译第三方库。然后就是进行第三步，在Enclave.cpp里调用这个新的打印函数 。
 
 在调用的时候，填入自己想要的、在上面定义好的打印函数即可。这部分在上一篇文章有讲。
 

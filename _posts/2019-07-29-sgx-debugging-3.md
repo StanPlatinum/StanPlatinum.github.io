@@ -11,7 +11,7 @@ https://github.com/StanPlatinum/elf-respect，https://github.com/StanPlatinum/ca
 
 在上面提到的项目里，我们做了一件这样的事情：我们把一个C/C++程序略微改造，经由我们自制的编译器编译之后，生成了一个relocatable Elf文件，也就是俗称.o文件。然后我们把这个relocatable Elf文件放到SGX enclave里执行。至于为什么要这么做，搞这么麻烦，这个可以去看我之后的paper或者blog，在此不表。
 
-在做这个麻烦的事情时，我们不可避免地遇到了程序有bug的问题。然而如我前两篇blogs所说，在SGX enclave里想要调试是非常困难的。
+在做这个麻烦的事情时，我们不可避免地遇到了程序有bug的问题。然而如我前两篇blogs所说，在SGX enclave里想要调试一个被后来load进去的binary是非常困难的。
 
 首先是打印方面的困难。想要打印一些信息，都得写Ocall。其实呢，写Ocall还算是简单的，到我们做这个项目时，由于二进制文件是事先编译好再load到enclave里的，所以我们只能先生成一个Ocall stub，然后在外部编译之前，用汇编写好调用这个Ocall stub的代码，同时在生成.o时也把需要用到的输出函数（比如puts）的实现（我们复用的musl-libc）也生成好并且include进来，才能在enclave被调用时，打印输出。
 
