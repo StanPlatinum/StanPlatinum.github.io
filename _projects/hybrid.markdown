@@ -9,10 +9,12 @@ img: # /assets/img/7.jpg
 
 ## HYBRID: Retrofitting LBR Profiling to Support Virtual Machine Introspection
 
-## [Link](https://github.com/StanPlatinum/ROP_detection_out-of-the-box)
+[Project Link](https://github.com/StanPlatinum/HYBRID)
 
 
 ***
+
+### Introduction
 
 Cloud security auditing is a well established industrial practice for assuring the transparency and accountability for a service provider to tenants. However, the multi-tenancy and self-service nature coupled with the sheer size of a cloud implies many unique challenges to cloud forensics.
 Although Virtual Machine Introspection (VMI) is a powerful tool for cloud auditing due to the isolation and high-privilege of the Hypervisor, the stealthiness of state-of-the-art attacks and the lack of precise information to bridge the semantic gap make existing  auditing solutions are difficult to fulfill real-time forensics when tracking enormous suspicious behaviors.
