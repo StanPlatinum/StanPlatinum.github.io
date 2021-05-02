@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /teaching/
-title: Teaching
+title: Teaching and Advising
 description: Not ready
 nav: true
 nav_order: 5
