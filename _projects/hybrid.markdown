@@ -9,7 +9,7 @@ img: # /assets/img/7.jpg
 
 ## HYBRID: Retrofitting LBR Profiling to Support Virtual Machine Introspection
 
-[Project Link](https://github.com/StanPlatinum/HYBRID)
+[Project Portal](https://github.com/StanPlatinum/HYBRID)
 
 
 ***

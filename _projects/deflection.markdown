@@ -4,7 +4,7 @@ title: Deflection/CAT-SGX
 description: S(gx)Elf-respect/Confidential Attestation
 img: # /assets/img/7.jpg
 # redirect: https://github.com/StanPlatinum/elf-respect
-importance: 1
+# importance: 1
 ---
 
 <!-- Every project has a beautiful feature showcase page.
@@ -31,8 +31,9 @@ To give your project a background in the portfolio page, just add the img tag to
 
 ## Privacy-preserving of both code and data on Service-Oriented Environment
 
-[Original Link](https://github.com/StanPlatinum/elf-respect)
-[Active Link](https://github.com/StanPlatinum/Deflection)
+[Project Portal](https://github.com/StanPlatinum/Deflection)
+
+[Original Version](https://github.com/StanPlatinum/elf-respect)
 
 ***
 
