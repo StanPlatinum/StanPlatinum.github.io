@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Liu Weijie | Graphene-SGX attestation 2</title>
+<meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+">
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.17.0/css/mdb.min.css" integrity="sha256-/SwJ2GDcEt5382i8zqDwl36VJGECxEoIcBIuoLmLR4g=" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"  integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Styles -->
+<link rel="shortcut icon" href="/assets/img/favicon.ico">
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<link rel="canonical" href="/blog/2021/graphene-attestation-2/">
+
+<!-- Open Graph -->
+
+
+  </head>
+
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+
+    <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light bg-white navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      
+      
+      
+      
+      <a class="navbar-brand title font-weight-lighter" href="/">
+       <span class="font-weight-bold">Liu</span>   Weijie
+      </a>
+      
+      <!-- Navbar Toogle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              About
+              
+            </a>
+          </li>
+          
+          <!-- Blog -->
+          <li class="nav-item active">
+            <a class="nav-link" href="/blog/">
+              Blogs
+              
+            </a>
+          </li>
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/projects/">
+                Projects
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/publications/">
+                Selected Publications
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/teaching/">
+                Teaching and Advising
+                
+              </a>
+          </li>
+          
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Graphene-SGX attestation 2</h1>
+    <p class="post-meta">January 28, 2021</p>
+  </header>
+
+  <article class="post-content">
+    <p>想要在Graphene里做attestation，最优雅的方式是加一个Ecall。但是它目前只有一个正儿八经的Ecall，就是ecall_enclave_start。
+其他的Ecall要么没怎么实现，要么就是要在这个最主要的ecall_enclave_start调用完之后，才能再调用，具体是通过加锁来限制的，代码在<code class="language-plaintext highlighter-rouge">enclave_ecalls.c</code>如下：</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">__atomic_compare_exchange_n</span><span class="p">(</span><span class="o">&amp;</span><span class="n">g_enclave_start_called</span><span class="p">.</span><span class="n">counter</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="cm">/*weak=*/</span><span class="nb">false</span><span class="p">,</span>
+                                    <span class="n">__ATOMIC_SEQ_CST</span><span class="p">,</span> <span class="n">__ATOMIC_RELAXED</span><span class="p">))</span> <span class="p">{</span>
+        <span class="c1">// ENCLAVE_START not yet called, so only valid ecall is ENCLAVE_START.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">ecall_index</span> <span class="o">!=</span> <span class="n">ECALL_ENCLAVE_START</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// To keep things simple, we treat an invalid ecall_index like an</span>
+            <span class="c1">// unsuccessful call to ENCLAVE_START.</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+</code></pre></div></div>
+<p>这就比较恶心了，因为想要加一个Ecall，不仅没有像加Ocall那么方便，同时还要照顾到这个ecall_enclave_start的感受，不得不说这个地方Graphene还没有做得很好。</p>
+
+<p>现在想要加Ecall，就得好好研究<code class="language-plaintext highlighter-rouge">void handle_ecall(long ecall_index, void* ecall_args, void* exit_target, void* enclave_base_addr)</code>这个ecall的handler了。我和<a href="https://ya0guang.com/">ya0guang</a>在这个handler里加入了一些debug info，用的Graphene最新的log API：<code class="language-plaintext highlighter-rouge">log_error()</code>。</p>
+
+<p>我们尝试了在各种地方加入debug info，来试图找到一个合适的添加我们自己ecall的地方。下面是我们的测试代码片段：</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">handle_ecall</span><span class="p">(</span><span class="kt">long</span> <span class="n">ecall_index</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">ecall_args</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">exit_target</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">enclave_base_addr</span><span class="p">)</span> <span class="p">{</span>
+    
+    <span class="n">log_error</span><span class="p">(</span><span class="s">"Handling 1</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">ecall_index</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">ecall_index</span> <span class="o">&gt;=</span> <span class="n">ECALL_NR</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">g_enclave_top</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">g_enclave_base</span> <span class="o">=</span> <span class="n">enclave_base_addr</span><span class="p">;</span>
+        <span class="n">g_enclave_top</span>  <span class="o">=</span> <span class="n">enclave_base_addr</span> <span class="o">+</span> <span class="n">GET_ENCLAVE_TLS</span><span class="p">(</span><span class="n">enclave_size</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cm">/* disallow malicious URSP (that points into the enclave) */</span>
+    <span class="kt">void</span><span class="o">*</span> <span class="n">ursp</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">GET_ENCLAVE_TLS</span><span class="p">(</span><span class="n">gpr</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">ursp</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">g_enclave_base</span> <span class="o">&lt;=</span> <span class="n">ursp</span> <span class="o">&amp;&amp;</span> <span class="n">ursp</span> <span class="o">&lt;=</span> <span class="n">g_enclave_top</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="n">log_error</span><span class="p">(</span><span class="s">"Handling 2</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+
+    <span class="n">SET_ENCLAVE_TLS</span><span class="p">(</span><span class="n">exit_target</span><span class="p">,</span>     <span class="n">exit_target</span><span class="p">);</span>
+    <span class="n">SET_ENCLAVE_TLS</span><span class="p">(</span><span class="n">ustack</span><span class="p">,</span>          <span class="n">ursp</span><span class="p">);</span>
+    <span class="n">SET_ENCLAVE_TLS</span><span class="p">(</span><span class="n">ustack_top</span><span class="p">,</span>      <span class="n">ursp</span><span class="p">);</span>
+    <span class="n">SET_ENCLAVE_TLS</span><span class="p">(</span><span class="n">clear_child_tid</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+    <span class="n">SET_ENCLAVE_TLS</span><span class="p">(</span><span class="n">untrusted_area_cache</span><span class="p">.</span><span class="n">in_use</span><span class="p">,</span> <span class="mi">0UL</span><span class="p">);</span>
+
+    <span class="n">log_error</span><span class="p">(</span><span class="s">"Handling 3</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+
+    <span class="kt">int64_t</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">__atomic_compare_exchange_n</span><span class="p">(</span><span class="o">&amp;</span><span class="n">g_enclave_start_called</span><span class="p">.</span><span class="n">counter</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="cm">/*weak=*/</span><span class="nb">false</span><span class="p">,</span>
+                                    <span class="n">__ATOMIC_SEQ_CST</span><span class="p">,</span> <span class="n">__ATOMIC_RELAXED</span><span class="p">))</span> <span class="p">{</span>
+        <span class="c1">// ENCLAVE_START not yet called, so only valid ecall is ENCLAVE_START.</span>
+</code></pre></div></div>
+<p>实验结果有点符合预期，有的非常奇怪。handling 1是可以打印出来的，但是到这里也就卡住了。这个我猜是enclave还没有准备好，于是还没有办法处理打印的Ocall。如果我们注释掉handling 1，这个时候输出了handling 3，handling 2没有看到，程序可以正常运行。这里很迷。如果注释掉handling 2，handling 3也可以被打印出来，程序正常运行。关于为什么注释掉handling 1会出现这么反直觉（玄学）的现象，我认为是在handling 2的时候，实现prinf的Ocall并没有被准备好，但是可以被调用，也可以正常返回；到handling 3的时候，Ocall都被准备好了，于是handling 3能够被正常打印。</p>
+
+  </article>
+
+  
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="fixed-bottom">
+  <div class="container mt-0">
+    &copy; Copyright 2021 Liu Weijie.
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+
+    
+    Last updated: July 04, 2021.
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- Load Core and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.0/umd/popper.min.js" integrity="sha256-OH05DFHUWzr725HmuHo3pnuvUUn+TJuj8/Qz9xytFEw=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.17.0/js/mdb.min.js"  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+
+<!-- Load KaTeX -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js" integrity="sha256-F/Xda58SPdcUCr+xhSGz9MA2zQBPb0ASEYKohl8UCHc=" crossorigin="anonymous"></script>
+<script src="/assets/js/katex.js"></script>
+
+
+
+<!-- Load Mansory & imagesLoaded -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+<!-- Project Cards Layout -->
+<script type="text/javascript">
+  // Init Masonry
+  var $grid = $('.grid').masonry({
+    gutter: 10,
+    horizontalOrder: true,
+    itemSelector: '.grid-item',
+  });
+  // layout Masonry after each image loads
+  $grid.imagesLoaded().progress( function() {
+    $grid.masonry('layout');
+  });
+</script>
+
+
+
+
+
+
+
+</html>

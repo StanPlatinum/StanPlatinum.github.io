@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Liu Weijie | Liu Weijie</title>
+<title>Liu Weijie | Graphene-SGX attestation 1</title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 ">
 
@@ -23,7 +23,7 @@
 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/blog/2021/graphene-attestation-1/">
 
 <!-- Open Graph -->
 
@@ -124,56 +124,51 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
 
-  <div class="header-bar">
-    <h1>The World</h1>
-    <h2>Sharing ideas for both academics and industry</h2>
-  </div>
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Graphene-SGX attestation 1</h1>
+    <p class="post-meta">January 21, 2021</p>
+  </header>
+
+  <article class="post-content">
+    <p>因为要完成主人的任务，要研究和二次开发Graphene-SGX里local attestation的部分；然而这个任务又比较繁琐，于是这次就记录一下过程，供后人（我自己）查阅。</p>
+
+<p>在做attestation之前，需要通过DH来建立安全信道。Graphene里用到的是：</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">_DkStreamKeyExchange</span><span class="p">(</span><span class="n">PAL_HANDLE</span> <span class="n">stream</span><span class="p">,</span> <span class="n">PAL_SESSION_KEY</span><span class="o">*</span> <span class="n">key</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Intel SGX 在做attestation的时候，都需要获取在CPU中的report。这个时候就需要用EREPORT这个指令。Graphene-SGX调用EREPORT的核心函数有仨，分别是：</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sgx_get_report</span><span class="p">(),</span>
+<span class="n">__sgx_get_report</span><span class="p">(),</span>
+<span class="n">sgx_report</span><span class="p">(),</span>
+</code></pre></div></div>
+<p>他们的参数都是三个，而且都是targetinfo, reportdata, 和report。
+不知道他们的区别，但是莽就完事了。主要用这么一句：</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">sgx_report</span><span class="p">(</span><span class="o">&amp;</span><span class="n">targetinfo</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">reportdata</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">report</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">ret</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">SGX_DBG</span><span class="p">(</span><span class="n">DBG_E</span><span class="p">,</span> <span class="s">"failed to get self report: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ret</span><span class="p">);</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">PAL_ERROR_INVAL</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>然后就是请求和回复report的函数，有这么俩：</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">_DkStreamReportRequest</span><span class="p">(</span><span class="n">PAL_HANDLE</span> <span class="n">stream</span><span class="p">,</span> <span class="n">sgx_sign_data_t</span><span class="o">*</span> <span class="n">data</span><span class="p">,</span>
+                           <span class="n">mr_enclave_check_t</span> <span class="n">is_mr_enclave_ok</span><span class="p">)</span>
+
+<span class="kt">int</span> <span class="n">_DkStreamReportRespond</span><span class="p">(</span><span class="n">PAL_HANDLE</span> <span class="n">stream</span><span class="p">,</span> <span class="n">sgx_sign_data_t</span><span class="o">*</span> <span class="n">data</span><span class="p">,</span>
+                           <span class="n">mr_enclave_check_t</span> <span class="n">is_mr_enclave_ok</span><span class="p">)</span>
+</code></pre></div></div>
+<p>这俩函数调用上面说的__sgx_get_report，还调用了一些用于同一个host上（因为是local attestation）两个不用enclave之间的通信函数，比如：
+_DkStreamRead 和 _DkStreamWrite。</p>
+
+<p>这之后做完attestation，就可以建立secure session了。建立session和安全通信的函数也有一堆，也都在<code class="language-plaintext highlighter-rouge">pal_linux.h</code>这个头里，这里就不说了。</p>
 
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/graphene-attestation-3/">Graphene-SGX attestation 3</a></h3>
-        <p class="post-meta">February 12, 2021</p>
-        <p>Graphene-SGX attestation - LAS and RAS</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/graphene-attestation-2/">Graphene-SGX attestation 2</a></h3>
-        <p class="post-meta">January 28, 2021</p>
-        <p>Graphene-SGX attestation - adding an Ecall</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/graphene-attestation-1/">Graphene-SGX attestation 1</a></h3>
-        <p class="post-meta">January 21, 2021</p>
-        <p>Graphene-SGX attestation key functions</p>
-      </li>
-    
-  </ul>
+  </article>
 
   
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="Liu Weijie">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="Liu Weijie - page 2">2</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
 
 </div>
 
