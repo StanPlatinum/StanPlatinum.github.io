@@ -6,7 +6,8 @@ subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
 
 profile:
   align: right
-  image: sao.png
+  # image: koichi.jpeg
+  image: jojo406.jpg
   # address: >
   #   Luddy Hall, Bloomington, IN
 
