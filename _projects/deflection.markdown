@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Deflection/CAT-SGX
+title: {Deflection}
 description: S(gx)Elf-respect/Confidential Attestation
 img: # /assets/img/7.jpg
 # redirect: https://github.com/StanPlatinum/elf-respect
