@@ -1,6 +1,6 @@
 ---
 layout: page
-title: dynamic-time-blurring
+title: Time-blurring
 description: On-demand time blurring for Xen Guest-VMs
 
 ---
