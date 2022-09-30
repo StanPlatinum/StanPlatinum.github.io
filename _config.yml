@@ -52,16 +52,16 @@ contact_note: >
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: "The World"  # your blog must have a name for it to show up in the nav bar
-blog_description: Sharing ideas for both academics and industry
-permalink: /blog/:year/:title/
+# blog_name: "The World"  # your blog must have a name for it to show up in the nav bar
+# blog_description: Sharing ideas for both academics and industry
+# permalink: /blog/:year/:title/
 
-# Pagination
-pagination:
-  enabled: true
+# # Pagination
+# pagination:
+#   enabled: true
 
-# Comments
-disqus_shortname: al-folio # put your disqus shortname
+# # Comments
+# disqus_shortname: al-folio # put your disqus shortname
 
 # -----------------------------------------------------------------------------
 # Collections
