@@ -1,10 +1,8 @@
 ---
 layout: page
 title: Deflection
-description: S(gx)Elf-respect
-img: # /assets/img/7.jpg
-# redirect: https://github.com/StanPlatinum/elf-respect
-# importance: 1
+description: "S(gx)Elf-respect" Verifying security properties of SGX programs
+
 ---
 
 
