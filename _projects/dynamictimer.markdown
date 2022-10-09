@@ -1,11 +1,11 @@
 ---
 layout: page
 title: Time-blurring
-description: On-demand time blurring for Xen Guest-VMs
+description: Dynamic time blurring for Virtual Machines
 
 ---
 
-# On-demand time blurring for Xen guest-VMs
+## On-demand time blurring for Xen guest-VMs
 
 Please refer to our esorics 2017 paper "On-demand time blurring to support side-channel defense" for more details.
 

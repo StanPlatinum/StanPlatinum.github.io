@@ -1,16 +1,13 @@
 ---
 layout: page
 title: HYBRID
-description: Hybrid VMI
-img: # /assets/img/7.jpg
-# redirect: https://github.com/StanPlatinum/elf-respect
-#importance: 1
+description: Hybrid Virtual Machine Introspection
+
 ---
 
 ## HYBRID: Retrofitting LBR Profiling to Support Virtual Machine Introspection
 
 [Project Portal](https://github.com/StanPlatinum/HYBRID)
-
 
 ***
 
