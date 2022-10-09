@@ -1,12 +1,11 @@
 ---
 layout: page
 title: Deflection
-description: "S(gx)Elf-respect" Verifying security properties of SGX programs
+description: Verifying security properties of SGX programs
 
 ---
 
-
-## Confidential attestation of both code and data on CCaaS
+## Confidential attestation of both code and data on CCaaS (SgxElf-respect)
 
 [Project Portal](https://github.com/StanPlatinum/Deflection)
 
