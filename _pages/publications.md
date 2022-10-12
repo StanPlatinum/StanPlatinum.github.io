@@ -3,7 +3,7 @@ layout: page
 permalink: /publications/
 title: Selected Publications
 description: A list of academic articles.
-years: [2021, 2020, 2019, 2018, 2017, 2016]
+years: [2022, 2021, 2020, 2019, 2018, 2017, 2016]
 nav: true
 ---
 
