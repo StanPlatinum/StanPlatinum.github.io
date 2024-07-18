@@ -17,7 +17,9 @@ social: true  # includes social icons at the bottom of the page
 
 ### Weijie Liu's Here.
 
-I am now an Associate Professor at Nankai University. Before that, I worked as a tech expert at Ant Group.
+I am currently an Associate Professor at Nankai University. Prior to this, I served as a technical expert at Ant Group. 
 
-I did my Postdoc fellowship at Indiana University Bloomington (co-advised by [Prof. XiaoFeng Wang](https://homes.luddy.indiana.edu/xw7/) and [Prof. Haixu Tang](https://homes.luddy.indiana.edu/hatang/)). 
-System Security is my main research area and I'm also interested in System Software, Software Engineering, and Image Processing.
+I received my Bachelor and Doctor degrees of Engineering at Wuhan University in 2012 and 2018 respectively.
+Subsequently, I completed my Postdoc fellowship at Indiana University Bloomington, under the co-supervision of [Prof. XiaoFeng Wang](https://homes.luddy.indiana.edu/xw7/) and [Prof. Haixu Tang](https://homes.luddy.indiana.edu/hatang/)). 
+
+System Security constitutes my main research area, while I also have a passion for System Software, Software Engineering, and Image Processing.
