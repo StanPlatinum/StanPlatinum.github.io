@@ -2,10 +2,10 @@
 layout: page
 title: Projects and Awards
 permalink: /projects/
-description: A growing collection of projects.
+description: Make a little contribution to the world
 nav: true
 nav_order: 2
-display_categories: [project, vulnerability]
+display_categories: [Projects, Vulnerabilities]
 horizontal: false
 ---
 
