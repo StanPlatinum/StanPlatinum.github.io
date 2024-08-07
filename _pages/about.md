@@ -19,7 +19,6 @@ social: true  # includes social icons at the bottom of the page
 
 I am currently an Associate Professor at Nankai University. Prior to this, I served as a technical expert at Ant Group. 
 
-I received my Bachelor and Doctor degrees of Engineering at Wuhan University in 2012 and 2018 respectively.
-Subsequently, I completed my Postdoc fellowship at Indiana University Bloomington, under the co-supervision of [Prof. XiaoFeng Wang](https://homes.luddy.indiana.edu/xw7/) and [Prof. Haixu Tang](https://homes.luddy.indiana.edu/hatang/)). 
+I received my Bachelor and Doctoral degree at Wuhan University in 2012 and 2018 respectively, advised by Prof. Lina Wang. From 2015 to 2016, I was a visiting student at Singapore Management University. During that period, my instructors were [Prof. Debin Gao](https://dbgao.github.io/) and [Prof. Mike Reiter](https://reitermk.github.io/). Subsequently, I completed my Postdoc fellowship at Indiana University Bloomington, under the co-supervision of [Prof. XiaoFeng Wang](https://homes.luddy.indiana.edu/xw7/) and [Prof. Haixu Tang](https://homes.luddy.indiana.edu/hatang/)).
 
 System Security constitutes my main research area, while I also have a passion for System Software, Software Engineering, and Image Processing.

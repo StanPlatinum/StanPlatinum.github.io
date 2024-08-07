@@ -2,6 +2,7 @@
 layout: page
 title: Deflection
 description: Verifying security properties of SGX programs
+category: project
 
 ---
 

@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Projects
+title: Projects and Awards
 permalink: /projects/
 description: A growing collection of projects.
 nav: true
 nav_order: 2
-display_categories: [work, fun]
+display_categories: [project, vulnerability]
 horizontal: false
 ---
 
