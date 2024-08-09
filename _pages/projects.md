@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Projects and Awards
+title: Projects
 permalink: /projects/
 description: Make a little contribution to the world
 nav: true
