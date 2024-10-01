@@ -2,7 +2,7 @@
 layout: page
 title: Patrol
 description: Path lookup access control for Linux containers
-category: Projects
+category: Defense
 
 ---
 

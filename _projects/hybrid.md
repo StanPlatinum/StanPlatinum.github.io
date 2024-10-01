@@ -2,7 +2,7 @@
 layout: page
 title: HYBRID
 description: Hybrid Virtual Machine Introspection
-category: Projects
+category: Vulnerability discovery
 
 ---
 

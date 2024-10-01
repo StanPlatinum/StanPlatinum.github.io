@@ -2,7 +2,7 @@
 layout: page
 title: Snapshot-attack
 description: Unanticipated Snapshot Attack against TEEs (CVE-2022-27499)
-category: Vulnerabilities
+category: Vulnerability discovery
 
 ---
 

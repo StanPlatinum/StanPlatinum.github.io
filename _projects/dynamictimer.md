@@ -2,7 +2,7 @@
 layout: page
 title: Time-blurring
 description: Dynamic time blurring for Virtual Machines
-category: Projects
+category: Defense
 
 ---
 
