@@ -5,7 +5,7 @@ permalink: /projects/
 description: Make a little contribution to the world
 nav: true
 nav_order: 2
-display_categories: [Vulnerability discovery, Defense]
+display_categories: [Vuln_discovery, Defense]
 horizontal: false
 ---
 
