@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Oakland paper!
+title: Paper got accepted, at Oakland!
 date: 2021-07-03 20:28:00-0400
 inline: false
 ---
