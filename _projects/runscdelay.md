@@ -2,7 +2,7 @@
 layout: page
 title: Robbery-on-DevOps
 description: Detection against DevOps mining
-category: Vuln_discovery
+category: Detection
 
 ---
 
