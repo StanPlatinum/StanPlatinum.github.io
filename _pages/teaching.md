@@ -13,7 +13,7 @@ Computer System Architecture - Fall 2024 (with [Prof. Yusen Li](https://cc.nanka
 
 ### Advising
 
-#### Present students
+###### Present students
 
 - Shuo Huai
 
