@@ -13,3 +13,5 @@ nav_order: 1
 {% bibliography -f {{ site.scholar.bibliography }} %}
 
 </div>
+
+[My PhD dissertation in Chinese](/assets/pdf/Phd.pdf).
