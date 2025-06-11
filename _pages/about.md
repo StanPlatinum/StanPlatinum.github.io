@@ -19,8 +19,8 @@ social: true  # includes social icons at the bottom of the page
 
 I am currently an Associate Professor at Nankai University. Prior to this, I served as a technical expert at Ant Group (2022-2024) and Tencent Group (2018).
 
-I received my Bachelor's and Doctoral degrees at Wuhan University in 2012 and 2018, respectively.
-From 2015 to 2016, I was a visiting student at SMU.
-Subsequently, I completed my 3-year Postdoc fellowship at IUB (2019-2021).
+I embarked on my academic journey at Wuhan University, where I earned my Bachelor's degree in 2012 and later my Doctoral degree in 2018, advised by [Prof. Lina Wang](https://cse.whu.edu.cn/info/1098/1762.htm).
+From 2015 to 2016, I had the privilege of being a visiting student at Singapore Management University. During this enriching period, I was fortunate to have [Prof. Debin Gao](https://dbgao.github.io/) and [Prof. Mike Reiter](https://reitermk.github.io/) as my instructors.
+Subsequently, I pursued a 3-year Postdoc fellowship at Indiana University Bloomington, jointly supervised by [Prof. XiaoFeng Wang](https://wangxiaofeng7.github.io/) and [Prof. Haixu Tang](https://homes.luddy.indiana.edu/hatang/).
 
-System Security is my main research area, and I am passionate about System Software and Image Processing.
+System Security is my main research area, and I am passionate about System Software and AI.
