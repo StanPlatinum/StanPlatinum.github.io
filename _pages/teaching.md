@@ -9,7 +9,8 @@ nav_order: 5
 
 ### Teaching
 
-Computer System Architecture - Fall 2024 (with [Prof. Yusen Li](https://cc.nankai.edu.cn/2021/0323/c13619a548881/page.htm))
+- Computer System Architecture (with [Prof. Yusen Li](https://cc.nankai.edu.cn/2021/0323/c13619a548881/page.htm))
+- Computer Systems Design (with [Prof. Ye Lu](https://cc.nankai.edu.cn/2021/0323/c13619a572673/page.htm))
 
 ### Advising
 
@@ -19,7 +20,7 @@ I am fortunate to advise and work with the following students:
 
 - Shuo Huai (master's student)
 - Songlin Zhu (master's student)
-- JinZhe Hu (master's student)
+- Jinzhe Hu (master's student)
 - Kejie Xie (master's student)
 - Heyang Sui (master's student)
 
