@@ -21,6 +21,6 @@ I am currently an Associate Professor at Nankai University. Prior to this, I ser
 
 I embarked on my academic journey at Wuhan University, where I earned my Bachelor's degree in 2012 and later my Doctoral degree in 2018, advised by Prof. Lina Wang.
 From 2015 to 2016, I had the privilege of being a visiting student at Singapore Management University. During this enriching period, I was fortunate to have [Prof. Debin Gao](https://dbgao.github.io/) and [Prof. Mike Reiter](https://reitermk.github.io/) as my instructors.
-Subsequently, I pursued a 3-year Postdoc fellowship at Indiana University Bloomington, jointly supervised by [Prof. XiaoFeng Wang](https://wangxiaofeng7.github.io/) and [Prof. Haixu Tang](https://homes.luddy.indiana.edu/hatang/).
+Subsequently, I completed a two-year postdoctoral fellowship at Indiana University Bloomington, followed by one year as a Research Assistant Professor (RAP), working with [Prof. XiaoFeng Wang](https://wangxiaofeng7.github.io/) and [Prof. Haixu Tang](https://homes.luddy.indiana.edu/hatang/).
 
-System Security is my main research area, and I am passionate about System Software and AI.
+System Security is my main research area, and I am passionate about System Software and AI Infra.
