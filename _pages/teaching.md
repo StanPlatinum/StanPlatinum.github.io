@@ -22,7 +22,6 @@ I am fortunate to advise and work with the following students:
 - Songlin Zhu (master's student)
 - Jinzhe Hu (master's student)
 - Kejie Xie (master's student)
-- Heyang Sui (master's student)
 
 ##### Co-advised students
 
@@ -32,6 +31,14 @@ I am also fortunate to co-advise the following students:
 - Zekun Fei (master's student)
 - Ao Duan (Ph.D. student)
 - Dongzhe Zhang (master's student)
+- Heyang Sui (master's student)
+- Junqi Duan
+- Zhihao Xu
+
+##### Alumni
+
+- Zhen Xu (Ph.D. student at NTU)
+- Zhenchen Wang (Ph.D. student at ISCAS, Chinese Academy of Sciences)
 
 <!-- For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course. -->
 
