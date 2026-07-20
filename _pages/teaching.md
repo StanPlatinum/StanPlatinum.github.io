@@ -9,7 +9,7 @@ nav_order: 5
 
 ### Teaching
 
-- Computer System Architecture (with [Prof. Yusen Li](https://cc.nankai.edu.cn/2021/0323/c13619a548881/page.htm))
+- Computer Architecture (with [Prof. Yusen Li](https://cc.nankai.edu.cn/2021/0323/c13619a548881/page.htm))
 - Computer Systems Design (with [Prof. Ye Lu](https://cc.nankai.edu.cn/2021/0323/c13619a572673/page.htm))
 
 ### Advising
@@ -32,13 +32,13 @@ I am also fortunate to co-advise the following students:
 - Ao Duan (Ph.D. student)
 - Dongzhe Zhang (master's student)
 - Heyang Sui (master's student)
-- Junqi Duan
-- Zhihao Xu
+- Junqi Duan (master's student)
+- Zhihao Xu (master's student)
 
 ##### Alumni
 
 - Zhen Xu (Ph.D. student at NTU)
-- Zhenchen Wang (Ph.D. student at ISCAS, Chinese Academy of Sciences)
+- Zhenchen Wang (Ph.D. student at ISCAS)
 
 <!-- For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course. -->
 
