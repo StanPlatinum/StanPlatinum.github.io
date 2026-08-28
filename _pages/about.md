@@ -15,26 +15,29 @@ news: true  # includes a list of news items
 social: true  # includes social icons at the bottom of the page
 ---
 
-### Weijie Liu's Here.
+### Weijie Liu
 
-I am currently an Associate Professor at Nankai University. Prior to this, I served as a technical expert at Ant Group (2022-2024) and Tencent Group (2018).
+I am an Associate Professor at Nankai University. Previously, I served as a technical expert at Ant Group (2022–2024) and Tencent (2018).
 
-I embarked on my academic journey at Wuhan University, where I earned my Bachelor's degree in 2012 and later my Doctoral degree in 2018, advised by Prof. Lina Wang.
-From 2015 to 2016, I had the privilege of being a visiting student at Singapore Management University. During this enriching period, I was fortunate to have [Prof. Debin Gao](https://dbgao.github.io/) and [Prof. Mike Reiter](https://reitermk.github.io/) as my instructors.
-Subsequently, I completed a two-year postdoctoral fellowship at Indiana University Bloomington, followed by one year as a Research Assistant Professor (RAP), working with [Prof. XiaoFeng Wang](https://wangxiaofeng7.github.io/) and [Prof. Haixu Tang](https://homes.luddy.indiana.edu/hatang/).
+I received my Bachelor's and Ph.D. degrees from Wuhan University in 2012 and 2018, respectively, under the supervision of Prof. Lina Wang. During my doctoral studies, I visited Singapore Management University and worked with [Prof. Debin Gao](https://dbgao.github.io/) and [Prof. Mike Reiter](https://reitermk.github.io/). I later completed a two-year postdoctoral fellowship and spent one year as a Research Assistant Professor at Indiana University Bloomington, working with [Prof. XiaoFeng Wang](https://wangxiaofeng7.github.io/) and [Prof. Haixu Tang](https://homes.luddy.indiana.edu/hatang/).
 
-My research spans systems and software security across the cloud stack, from cloud-native runtimes and TEE-enabled systems software to processor microarchitecture.
+## Research
 
-### Research Interests
+My research focuses on building secure and trustworthy computing systems across the software–hardware stack. It connects application isolation, TEE-enabled systems software, and processor-level security through the following three areas.
 
-#### Cloud-Native Application and Runtime Security
+<div class="research-areas">
+  <section class="research-area">
+    <h3><span class="research-area-number">01</span> Cloud-Native Application and Runtime Security</h3>
+    <p>I study isolation and runtime security in containerized and multi-tenant cloud platforms. My work includes sandboxing untrusted CI workloads with gVisor [S&amp;P 22], identifying and mitigating container-escape vectors caused by path misresolution and cross-boundary desynchronization [CCS 23, NDSS 26], characterizing trust-boundary vulnerabilities in TEE container systems [FSE 26], and building a secure, resource-efficient, and pluggable Kubernetes architecture for multi-tenancy [EuroSys 26].</p>
+  </section>
 
-I study isolation and runtime security in containerized and multi-tenant cloud platforms. My work includes sandboxing untrusted CI workloads with gVisor [S&P 22], identifying and mitigating container-escape vectors caused by path misresolution and cross-boundary desynchronization [CCS 23, NDSS 26], characterizing trust-boundary vulnerabilities in TEE container systems [FSE 26], and building a secure, resource-efficient, and pluggable Kubernetes architecture for multi-tenancy [EuroSys 26].
+  <section class="research-area">
+    <h3><span class="research-area-number">02</span> Trusted Systems Software and Hardware-Software Co-Design</h3>
+    <p>I build systems software that leverages TEEs to protect sensitive applications and data, including library operating systems, secure storage, enclave services, and confidential-computing platforms. I contributed to Occlum, an open-source library OS for Intel SGX that has been deployed in Alipay. My work also uncovered eviction attacks against SGX-PFS and introduced sync-atomic secure storage [FAST 25], alongside research on in-enclave policy verification, user isolation, privacy-preserving analytics, preemption defense, and enclave-assisted secure computation [DSN 21, TDSC 23, CLOUD 21, ISPA 20, CHES 26].</p>
+  </section>
 
-#### Trusted Systems Software and Hardware-Software Co-Design
-
-I build systems software that leverages TEEs to protect sensitive applications and data, including library operating systems, secure storage, enclave services, and confidential-computing platforms. I contributed to Occlum, an open-source library OS for Intel SGX that has been deployed in Alipay. My work also uncovered eviction attacks against SGX-PFS and introduced sync-atomic secure storage [FAST 25], alongside research on in-enclave policy verification, user isolation, privacy-preserving analytics, preemption defense, and enclave-assisted secure computation [DSN 21, TDSC 23, CLOUD 21, ISPA 20, CHES 26].
-
-#### Processor and Microarchitectural Security
-
-I investigate microarchitectural attacks and hardware-assisted mechanisms for side-channel defense, detection, and forensics. My work includes VMFUNC-based time blurring for mitigating timing-dependent side channels [ESORICS 17], hardware-virtualization-based detection of controlled-channel attacks [ICA3PP 18], LBR-assisted virtual machine introspection [TIFS 22], and practical Rowhammer attack techniques [Tsinghua ST 19].
+  <section class="research-area">
+    <h3><span class="research-area-number">03</span> Processor and Microarchitectural Security</h3>
+    <p>I investigate microarchitectural attacks and hardware-assisted mechanisms for side-channel defense, detection, and forensics. My work includes VMFUNC-based time blurring for mitigating timing-dependent side channels [ESORICS 17], hardware-virtualization-based detection of controlled-channel attacks [ICA3PP 18], LBR-assisted virtual machine introspection [TIFS 22], and practical Rowhammer attack techniques [Tsinghua ST 19].</p>
+  </section>
+</div>
