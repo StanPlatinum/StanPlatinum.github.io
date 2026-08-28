@@ -38,6 +38,6 @@ My research focuses on building secure and trustworthy computing systems across 
 
   <section class="research-area">
     <h3><span class="research-area-number">03</span> Processor and Microarchitectural Security</h3>
-    <p>I investigate microarchitectural attacks and hardware-assisted mechanisms for side-channel defense, detection, and forensics. My work includes VMFUNC-based time blurring for mitigating timing-dependent side channels [ESORICS 17], hardware-virtualization-based detection of controlled-channel attacks [ICA3PP 18], LBR-assisted virtual machine introspection [TIFS 22], and practical Rowhammer attack techniques [Tsinghua ST 19].</p>
+    <p>I investigate microarchitectural attacks and hardware-assisted defenses. My work covers VMFUNC-based time blurring <span class="paper-ref">[ESORICS 17]</span>, virtualization-based controlled-channel detection <span class="paper-ref">[ICA3PP 18]</span>, LBR-assisted virtual machine introspection <span class="paper-ref">[TIFS 22]</span>, and practical Rowhammer attacks <span class="paper-ref">[Tsinghua ST 19]</span>.</p>
   </section>
 </div>

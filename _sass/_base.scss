@@ -193,9 +193,15 @@ blockquote {
 .research-area-number {
   color: var(--global-theme-color);
   flex: 0 0 auto;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-family: inherit;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: inherit;
+}
+
+.paper-ref {
+  white-space: nowrap;
 }
 
 
