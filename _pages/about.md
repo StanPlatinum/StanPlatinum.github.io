@@ -33,7 +33,7 @@ My research focuses on building secure and trustworthy computing systems across 
 
   <section class="research-area">
     <h3><span class="research-area-number">02</span> Trusted Systems Software and Hardware-Software Co-Design</h3>
-    <p>I build systems software that leverages TEEs to protect sensitive applications and data, including library operating systems, secure storage, enclave services, and confidential-computing platforms. I contributed to Occlum, an open-source library OS for Intel SGX that has been deployed in Alipay. My work also uncovered eviction attacks against SGX-PFS and introduced sync-atomic secure storage [FAST 25], alongside research on in-enclave policy verification, user isolation, privacy-preserving analytics, preemption defense, and enclave-assisted secure computation [DSN 21, TDSC 23, CLOUD 21, ISPA 20, CHES 26].</p>
+    <p>I build systems software that leverages TEEs to protect sensitive applications and data, including library operating systems, secure storage, enclave services, and confidential-computing platforms. I contributed to Occlum, an open-source library OS for Intel SGX that has been deployed in Alipay. My work also uncovered eviction attacks against SGX-PFS and introduced sync-atomic secure storage [FAST 25], alongside research on in-enclave policy verification, user isolation, privacy-preserving analytics, preemption defense, enclave-assisted secure computation [DSN 21, TDSC 23, CLOUD 21, ISPA 20, CHES 26], and hardware-event-based covert-channel detection in cloud environments <span class="paper-ref">[SCN 16]</span>.</p>
   </section>
 
   <section class="research-area">
