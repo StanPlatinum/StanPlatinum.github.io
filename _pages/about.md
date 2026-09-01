@@ -19,7 +19,7 @@ social: true  # includes social icons at the bottom of the page
 
 I am an Associate Professor at Nankai University. Previously, I served as a technical expert at Ant Group (2022–2024) and Tencent (2018).
 
-I received my Bachelor's and Ph.D. degrees from Wuhan University in 2012 and 2018, respectively, under the supervision of Prof. Lina Wang. During my doctoral studies, I visited Singapore Management University and worked with [Prof. Debin Gao](https://dbgao.github.io/) and [Prof. Mike Reiter](https://reitermk.github.io/). I later completed a two-year postdoctoral fellowship and spent one year as a Research Assistant Professor at Indiana University Bloomington, working with [Prof. XiaoFeng Wang](https://wangxiaofeng7.github.io/) and [Prof. Haixu Tang](https://homes.luddy.indiana.edu/hatang/).
+I received my Bachelor's and Ph.D. degrees from Wuhan University in 2012 and 2018, respectively, under the supervision of Prof. Lina Wang. During my doctoral studies, I visited Singapore Management University and worked with [Prof. Debin Gao](https://dbgao.github.io/) and [Prof. Mike Reiter](https://reitermk.github.io/). I later completed a two-year postdoctoral fellowship and spent one year as a Research Assistant Professor at Indiana University Bloomington, working with [Prof. XiaoFeng Wang](https://wangxiaofeng7.github.io/) and [Prof. Haixu Tang](https://scholar.google.com/citations?user=4Hywr5UAAAAJ&hl=en).
 
 ## Research
 
